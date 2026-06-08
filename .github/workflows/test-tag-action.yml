@@ -5,22 +5,14 @@ jobs:
   test-tag:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-
-      - name: Checkout action repository
-        uses: actions/checkout@v4
-        with:
-          repository: <owner>/create-git-tag-action
-          path: .github/actions/create-git-tag-action
-
       - name: Create lightweight tag
-        uses: ./.github/actions/create-git-tag-action
+        uses: daniilpanov/create-git-tag-action@1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: test-lightweight-v1
 
       - name: Create annotated tag
-        uses: ./.github/actions/create-git-tag-action
+        uses: daniilpanov/create-git-tag-action@1
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: test-annotated-v1
