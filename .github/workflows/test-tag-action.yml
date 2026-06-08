@@ -8,12 +8,12 @@ jobs:
       - name: Create lightweight tag
         uses: daniilpanov/create-git-tag-action@1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.REPO_TOKEN }}
           tag_name: test-lightweight-v1
 
       - name: Create annotated tag
         uses: daniilpanov/create-git-tag-action@1
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.REPO_TOKEN }}
           tag_name: test-annotated-v1
           tag_message: 'Test annotated tag v1'
